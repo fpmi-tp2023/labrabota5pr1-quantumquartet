@@ -8,6 +8,9 @@
 #include "jockey.h"
 #include "owner.h"
 #include "manager.h"
+#include "update.h"
+#include "delete.h"
+#include "insert.h"
 #include <regex>
 
 

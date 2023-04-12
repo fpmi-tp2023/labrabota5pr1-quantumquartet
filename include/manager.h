@@ -7,18 +7,8 @@ void ManagerSelectRaces(sqlite3* db);
 
 void ManagerSelectBestJockey(sqlite3* db);
 
-void PrizePoolDistribution(sqlite3* db);
+void PrizePoolDistribution(sqlite3* db, double prize_pool);
 
-void Update();
-
-void Insert();
-
-void Delete();
-
-void UpdateMenu();
-
-void InsertMenu();
-
-void DeleteMenu();
+void TableInteractions(sqlite3* db);
 
 static int callback(void* NotUsed, int argc, char** argv, char** azColName);

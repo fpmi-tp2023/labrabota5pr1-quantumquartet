@@ -11,10 +11,8 @@ int main() {
 		return(0);
 	}
 	else {
-		//MainMenu(db);
-		PrizePoolDistribution(db);
+		MainMenu(db);
 	}
 	sqlite3_close(db);
-	while (true);
 	return 0;
 }
