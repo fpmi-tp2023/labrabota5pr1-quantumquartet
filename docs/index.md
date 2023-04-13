@@ -4,13 +4,13 @@
 
 # Другие секции
 
-- [Глоссарий](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/gh-pages/docs/glossary.md)
-- [Функциональные требования](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/gh-pages/docs/func_trebovaniya.md)
-- [Спецификация проекта](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/gh-pages/docs/specification.md)
-- [Дополнительная спецификация](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/gh-pages/docs/add_spec.md)
-- [Схема базы данных](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/gh-pages/docs/db_shemes.md)
-- [Презентация проекта](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/gh-pages/docs/presentation.md)
-- [Ссылки](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/gh-pages/docs/add_page.md)
+- [Глоссарий](glossary.md)
+- [Функциональные требования](func_trebovaniya.md)
+- [Спецификация проекта](specification.md)
+- [Дополнительная спецификация](add_spec.md)
+- [Схема базы данных](db_shemes.md)
+- [Презентация проекта](presentation.md)
+- [Ссылки](add_page.md)
 
 # Выполнили
 
