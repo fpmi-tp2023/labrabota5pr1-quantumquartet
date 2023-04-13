@@ -38,7 +38,7 @@ Project authors:
      - Implementation of a use case diagram to illustrate functional requirements;
      - Implementation of class diagrams that describe the structure of the application;
      - Implementation of the component diagram and placement;
-- [**Chernyshova Ksenia**](https://github.com/xenia155) - Team Leader of the team;
+- [**Chernyshova Ksenia**](https://github.com/xenia155) - Team Leader;
      - Project management in Kanban style;
      - Project documentation in Github Wiki/Pages;
      - Testing the project with Github Actions.
