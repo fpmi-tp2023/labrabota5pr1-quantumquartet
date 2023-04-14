@@ -34,14 +34,15 @@ Project authors:
      - Writing application code;
      - Testing the application code;
      - Writing SQL queries;
+     - Testing the project with Github Actions.
 - [**Krivlenya Anastasia**](https://github.com/a-krivlenya)
      - Implementation of a use case diagram to illustrate functional requirements;
      - Implementation of class diagrams that describe the structure of the application;
      - Implementation of the component diagram and placement;
      - Implementation of the sequence diagram.
-- [**Chernyshova Ksenia**](https://github.com/xenia155) - Team Leader;
+- [**Chernyshova Ksenia**](https://github.com/xenia155) 
+     - Team Leader;
      - Project management in Kanban style;
      - Project documentation in Github Wiki/Pages;
-     - Testing the project with Github Actions.
      
 
