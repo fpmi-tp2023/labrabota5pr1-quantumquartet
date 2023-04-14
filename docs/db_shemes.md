@@ -1,5 +1,5 @@
 # Схема базы данных
-![Db_scheme](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/main/database_schema/database_schema.png?raw=true)
+![Db_scheme](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/main/docs/database_schema/database_schema.png?raw=true)
 
 
 # Таблицы базы данных
