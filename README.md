@@ -33,6 +33,7 @@ Project authors:
 - [**Vadim Kasyanenko**](https://github.com/VadimKasyanenko)
      - Writing application code;
      - Testing the application code;
+     - Testing the project with Github Actions;
      - Writing SQL queries;
 - [**Krivlenya Anastasia**](https://github.com/a-krivlenya)
      - Implementation of a use case diagram to illustrate functional requirements;
@@ -41,7 +42,6 @@ Project authors:
 - [**Chernyshova Ksenia**](https://github.com/xenia155) - Team Leader;
      - Project management in Kanban style;
      - Project documentation in Github Wiki/Pages;
-     - Testing the project with Github Actions.
      - Implementation of the sequence diagram.
     
 
