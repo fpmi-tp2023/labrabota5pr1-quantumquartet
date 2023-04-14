@@ -162,12 +162,13 @@ void InsertIntoJockeys(sqlite3* db) {
         return;
     }
 
-
     if (rc == SQLITE_OK) {
-        sqlite3_bind_text(res, 1, surname.c_str(), surname.length(), SQLITE_TRANSIENT);
+        sqlite3_bind_text(res, 1, surname.c_str(), surname.length(),
+            SQLITE_TRANSIENT);
         sqlite3_bind_int(res, 2, experience);
         sqlite3_bind_text(res, 3, date.c_str(), date.length(), SQLITE_TRANSIENT);
-        sqlite3_bind_text(res, 4, address.c_str(), address.length(), SQLITE_TRANSIENT);
+        sqlite3_bind_text(res, 4, address.c_str(), address.length(),
+            SQLITE_TRANSIENT);
     }
     else {
         fprintf(stderr, "Failed to execute statement: %s\n", sqlite3_errmsg(db));
@@ -209,7 +210,8 @@ void InsertIntoOwners(sqlite3* db) {
     } while (!NameCheck(name));
 
     if (rc == SQLITE_OK) {
-        sqlite3_bind_text(res, 1, surname.c_str(), surname.length(), SQLITE_TRANSIENT);
+        sqlite3_bind_text(res, 1, surname.c_str(), surname.length(),
+            SQLITE_TRANSIENT);
         sqlite3_bind_text(res, 2, name.c_str(), name.length(), SQLITE_TRANSIENT);
     }
     else {
@@ -222,13 +224,14 @@ void InsertIntoOwners(sqlite3* db) {
 
 void InsertIntoRaces(sqlite3* db) {
     const char* sql =
-        "insert into races (date, race_number, horse_id, jockey_id, taken_place)\n"
+        "insert into races (date, race_number, horse_id, jockey_id, "
+        "taken_place)\n"
         "values (?, ?, ?, ?, ?);";
     sqlite3_stmt* res;
     int rc = sqlite3_prepare_v2(db, sql, -1, &res, 0);
 
     std::string date;
-    int  number_of_race, horse_id, jockey_id, taken_place;
+    int number_of_race, horse_id, jockey_id, taken_place;
 
     do {
         std::cout << "Choose horse id to insert: ";

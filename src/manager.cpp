@@ -194,7 +194,6 @@ void PrizePoolDistribution(sqlite3* db, double prize_pool) {
     int rc = sqlite3_prepare_v2(db, sql, -1, &res, 0);
 
     if (rc == SQLITE_OK) {
-
     }
     else {
         fprintf(stderr, "Failed to execute statement: %s\n", sqlite3_errmsg(db));
@@ -205,16 +204,17 @@ void PrizePoolDistribution(sqlite3* db, double prize_pool) {
         std::cout << "don't have any races in this time interval\n";
     }
     else {
-        std::cout << sqlite3_column_text(res, 0) << " prize is " << prize_pool * 0.5 << '\n';
+        std::cout << sqlite3_column_text(res, 0) << " prize is " << prize_pool * 0.5
+            << '\n';
         step = sqlite3_step(res);
-        std::cout << sqlite3_column_text(res, 0) << " prize is " << prize_pool * 0.3 << '\n';
+        std::cout << sqlite3_column_text(res, 0) << " prize is " << prize_pool * 0.3
+            << '\n';
         step = sqlite3_step(res);
-        std::cout << sqlite3_column_text(res, 0) << " prize is " << prize_pool * 0.2 << '\n';
+        std::cout << sqlite3_column_text(res, 0) << " prize is " << prize_pool * 0.2
+            << '\n';
         step = sqlite3_step(res);
         std::cout << '\n';
     }
 
     sqlite3_finalize(res);
 }
-
-

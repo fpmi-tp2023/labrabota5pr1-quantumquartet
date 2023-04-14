@@ -36,9 +36,7 @@ void DeleteMenu(sqlite3* db) {
     }
 }
 
-
 void DeleteFromHorses(sqlite3* db) {
-
     int id;
     do {
         std::cout << "Choose id to delete: ";
@@ -61,11 +59,9 @@ void DeleteFromHorses(sqlite3* db) {
     sqlite3_step(res);
     sqlite3_finalize(res);
     std::cout << "Deleted succesfully\n";
-
 }
 
 void DeleteFromJockeys(sqlite3* db) {
-
     int id;
     do {
         std::cout << "Choose id to delete: ";
@@ -88,11 +84,9 @@ void DeleteFromJockeys(sqlite3* db) {
     sqlite3_step(res);
     sqlite3_finalize(res);
     std::cout << "Deleted succesfully\n";
-
 }
 
 void DeleteFromOwners(sqlite3* db) {
-
     int id;
     do {
         std::cout << "Choose id to delete: ";
@@ -115,11 +109,9 @@ void DeleteFromOwners(sqlite3* db) {
     sqlite3_step(res);
     sqlite3_finalize(res);
     std::cout << "Deleted succesfully\n";
-
 }
 
 void DeleteFromRaces(sqlite3* db) {
-
     int id;
     do {
         std::cout << "Choose id to delete: ";
@@ -142,11 +134,9 @@ void DeleteFromRaces(sqlite3* db) {
     sqlite3_step(res);
     sqlite3_finalize(res);
     std::cout << "Deleted succesfully\n";
-
 }
 
 void DeleteFromUsers(sqlite3* db) {
-
     int id;
     do {
         std::cout << "Choose id to delete: ";
@@ -169,5 +159,4 @@ void DeleteFromUsers(sqlite3* db) {
     sqlite3_step(res);
     sqlite3_finalize(res);
     std::cout << "Deleted succesfully\n";
-
 }

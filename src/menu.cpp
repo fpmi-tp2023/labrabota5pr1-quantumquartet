@@ -187,7 +187,8 @@ void MainMenu(sqlite3* db) {
             break;
 
         case 3:
-            std::cout << "\nWhile trying to input data you can type 0 in numeric field or \"exit\" in other fields to abandon process\n\n";
+            std::cout << "\nWhile trying to input data you can type 0 in numeric "
+                "field or \"exit\" in other fields to abandon process\n\n";
             break;
 
         case 4:

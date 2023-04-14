@@ -34,7 +34,8 @@ void UpdateMenu(sqlite3* db) {
 
 void UpdateHorses(sqlite3* db) {
     const char* sql =
-        "update horses set name=?, age=?, experience=?, paid_price=?, owner_id=?\n"
+        "update horses set name=?, age=?, experience=?, paid_price=?, "
+        "owner_id=?\n"
         "WHERE id=?;";
     sqlite3_stmt* res;
     int rc = sqlite3_prepare_v2(db, sql, -1, &res, 0);
@@ -168,11 +169,11 @@ void UpdateJockeys(sqlite3* db) {
         }
     } while (!NameCheck(surname));
 
-        std::cout << "Choose adress to update: ";
-        std::cin >> address;
-        if (address == "exit") {
-            return;
-        }
+    std::cout << "Choose adress to update: ";
+    std::cin >> address;
+    if (address == "exit") {
+        return;
+    }
 
     do {
         std::cout << "Choose id to update: ";
@@ -186,10 +187,12 @@ void UpdateJockeys(sqlite3* db) {
     } while (id <= 0);
 
     if (rc == SQLITE_OK) {
-        sqlite3_bind_text(res, 1, surname.c_str(), surname.length(), SQLITE_TRANSIENT);
+        sqlite3_bind_text(res, 1, surname.c_str(), surname.length(),
+            SQLITE_TRANSIENT);
         sqlite3_bind_int(res, 2, experience);
         sqlite3_bind_text(res, 3, date.c_str(), date.length(), SQLITE_TRANSIENT);
-        sqlite3_bind_text(res, 4, address.c_str(), address.length(), SQLITE_TRANSIENT);
+        sqlite3_bind_text(res, 4, address.c_str(), address.length(),
+            SQLITE_TRANSIENT);
         sqlite3_bind_int(res, 5, id);
     }
     else {
@@ -207,7 +210,7 @@ void UpdateOwners(sqlite3* db) {
     sqlite3_stmt* res;
     int rc = sqlite3_prepare_v2(db, sql, -1, &res, 0);
 
-    std::string surname,name;
+    std::string surname, name;
     int id;
 
     do {
@@ -244,7 +247,8 @@ void UpdateOwners(sqlite3* db) {
     } while (id <= 0);
 
     if (rc == SQLITE_OK) {
-        sqlite3_bind_text(res, 1, surname.c_str(), surname.length(), SQLITE_TRANSIENT);
+        sqlite3_bind_text(res, 1, surname.c_str(), surname.length(),
+            SQLITE_TRANSIENT);
         sqlite3_bind_text(res, 2, name.c_str(), name.length(), SQLITE_TRANSIENT);
         sqlite3_bind_int(res, 3, id);
     }
