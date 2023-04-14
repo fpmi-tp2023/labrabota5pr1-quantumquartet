@@ -12,8 +12,7 @@ Various types of database queries are illustrated, data is stored in various for
 
 1. Clone the repository: `git clone https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet`
 2. Change into the project directory: `labrabota5pr1-quantumquartet`
-3. To create necessary folders use: `make`
-4. To run application use: `make run`
+3. Start an app: `gcc main.cpp jockey.cpp owner.cpp menu.cpp manager.cpp insert.cpp update.cpp delete.cpp  -lstdc++ sqlite3.o`
 > *Make sure you have gcc installed on your computer. If not, install as it is desribed [here](https://www.freecodecamp.org/news/how-to-install-c-and-cpp-compiler-on-windows/)*
 
 ## Usage
@@ -34,7 +33,6 @@ Project authors:
 - [**Vadim Kasyanenko**](https://github.com/VadimKasyanenko)
      - Writing application code;
      - Testing the application code;
-     - Testing the project with Github Actions;
      - Writing SQL queries;
 - [**Krivlenya Anastasia**](https://github.com/a-krivlenya)
      - Implementation of a use case diagram to illustrate functional requirements;
@@ -43,6 +41,7 @@ Project authors:
 - [**Chernyshova Ksenia**](https://github.com/xenia155) - Team Leader;
      - Project management in Kanban style;
      - Project documentation in Github Wiki/Pages;
+     - Testing the project with Github Actions.
      - Implementation of the sequence diagram.
     
 
