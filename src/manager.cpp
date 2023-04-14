@@ -1,4 +1,4 @@
-#include "manager.h"
+#include "../include/manager.h"
 
 static int callback(void* NotUsed, int argc, char** argv, char** azColName) {
     int i;
@@ -35,7 +35,7 @@ void ManagerInterface(sqlite3* db, std::string surname) {
 
         case 3:
             double prize_pool;
-            std::cout << "Choose prize pool";
+            std::cout << "Choose prize pool: ";
 
             do {
                 std::cin >> prize_pool;
@@ -152,7 +152,6 @@ void ManagerSelectBestJockey(sqlite3* db) {
     }
     else {
     }
-    sqlite3_close(db);
 }
 
 void TableInteractions(sqlite3* db) {
@@ -183,10 +182,10 @@ void TableInteractions(sqlite3* db) {
     }
 }
 
-//????????
 void PrizePoolDistribution(sqlite3* db, double prize_pool) {
     const char* sql =
-        "select horse_id from races \n"
+        "select H.name from races R\n"
+        "inner join Horses H on H.id=R.horse_id\n"
         "where date = (select max(date) from races)\n"
         "and number_of_race = (select max(number_of_race) from races)\n"
         "limit 3; ";
@@ -195,6 +194,7 @@ void PrizePoolDistribution(sqlite3* db, double prize_pool) {
     int rc = sqlite3_prepare_v2(db, sql, -1, &res, 0);
 
     if (rc == SQLITE_OK) {
+
     }
     else {
         fprintf(stderr, "Failed to execute statement: %s\n", sqlite3_errmsg(db));
@@ -204,15 +204,17 @@ void PrizePoolDistribution(sqlite3* db, double prize_pool) {
     if (step != SQLITE_ROW) {
         std::cout << "don't have any races in this time interval\n";
     }
-    while (step == SQLITE_ROW) {
-        for (int i = 0; i < sqlite3_column_count(res); ++i) {
-            std::cout << sqlite3_column_name(res, i) << '='
-                << sqlite3_column_text(res, i) << '\n';
-        }
-
-        std::cout << '\n';
+    else {
+        std::cout << sqlite3_column_text(res, 0) << " prize is " << prize_pool * 0.5 << '\n';
         step = sqlite3_step(res);
+        std::cout << sqlite3_column_text(res, 0) << " prize is " << prize_pool * 0.3 << '\n';
+        step = sqlite3_step(res);
+        std::cout << sqlite3_column_text(res, 0) << " prize is " << prize_pool * 0.2 << '\n';
+        step = sqlite3_step(res);
+        std::cout << '\n';
     }
 
     sqlite3_finalize(res);
 }
+
+

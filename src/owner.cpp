@@ -1,14 +1,14 @@
-#include "owner.h"
+#include "../include/owner.h"
 
 void OwnerInterface(sqlite3* db, std::string surname) {
     int manager_choice;
-    std::cout << "\nWelcome back " << surname << "\n"
-        << "Choose actions: \n"
-        << "1.Show best horse \n"
-        << "2.Show all horses \n"
-        << "3.Return to the main menu \n";
 
     while (true) {
+        std::cout << "\nWelcome back " << surname << "\n"
+            << "Choose actions: \n"
+            << "1.Show best horse \n"
+            << "2.Show all horses \n"
+            << "3.Return to the main menu \n";
         std::cin >> manager_choice;
         switch (manager_choice) {
         case 1:
@@ -50,7 +50,7 @@ void OwnerSelectData(sqlite3* db, std::string surname) {
 
     int step = sqlite3_step(res);
     if (step != SQLITE_ROW) {
-        std::cout << surname << "don't have horses\n";
+        std::cout << surname << " don't have horses\n";
     }
 
     while (step == SQLITE_ROW) {
@@ -99,7 +99,7 @@ void OwnerSelectBestHorse(sqlite3* db, std::string surname) {
 
     int step = sqlite3_step(res);
     if (step != SQLITE_ROW) {
-        std::cout << surname << "don't have horses with first places\n";
+        std::cout << surname << " don't have horses with first places\n";
     }
 
     while (step == SQLITE_ROW) {

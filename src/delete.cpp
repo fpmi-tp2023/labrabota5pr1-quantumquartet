@@ -1,4 +1,4 @@
-#include "delete.h"
+#include "../include/delete.h"
 
 void DeleteMenu(sqlite3* db) {
     int choice;
@@ -13,19 +13,19 @@ void DeleteMenu(sqlite3* db) {
         std::cin >> choice;
         switch (choice) {
         case 1:
-            DeleteFromTable(db, "horses");
+            DeleteFromHorses(db);
             break;
         case 2:
-            DeleteFromTable(db, "jockeys");
+            DeleteFromJockeys(db);
             break;
         case 3:
-            DeleteFromTable(db, "owners");
+            DeleteFromOwners(db);
             break;
         case 4:
-            DeleteFromTable(db, "races");
+            DeleteFromRaces(db);
             break;
         case 5:
-            DeleteFromTable(db, "users");
+            DeleteFromUsers(db);
             break;
         case 6:
             return;
@@ -36,29 +36,138 @@ void DeleteMenu(sqlite3* db) {
     }
 }
 
-void DeleteFromTable(sqlite3* db, std::string table) {
-    int id;
 
+void DeleteFromHorses(sqlite3* db) {
+
+    int id;
     do {
-        std::cout << "Choose id to delete";
+        std::cout << "Choose id to delete: ";
         std::cin >> id;
         if (id <= 0) {
             std::cout << "\nPlease choose positive number\n";
         }
     } while (id <= 0);
 
-    const char* sql = "delete from ? where id = ?;";
+    const char* sql = "delete from horses where id = ?;";
     sqlite3_stmt* res;
     int rc = sqlite3_prepare_v2(db, sql, -1, &res, 0);
 
     if (rc == SQLITE_OK) {
-        sqlite3_bind_text(res, 1, table.c_str(), table.length(), SQLITE_TRANSIENT);
-        sqlite3_bind_int(res, 2, id);
+        sqlite3_bind_int(res, 1, id);
     }
     else {
         fprintf(stderr, "Failed to execute statement: %s\n", sqlite3_errmsg(db));
     }
     sqlite3_step(res);
     sqlite3_finalize(res);
-    std::cout << "Deleted succesfully";
+    std::cout << "Deleted succesfully\n";
+
+}
+
+void DeleteFromJockeys(sqlite3* db) {
+
+    int id;
+    do {
+        std::cout << "Choose id to delete: ";
+        std::cin >> id;
+        if (id <= 0) {
+            std::cout << "\nPlease choose positive number\n";
+        }
+    } while (id <= 0);
+
+    const char* sql = "delete from jockeys where id = ?;";
+    sqlite3_stmt* res;
+    int rc = sqlite3_prepare_v2(db, sql, -1, &res, 0);
+
+    if (rc == SQLITE_OK) {
+        sqlite3_bind_int(res, 1, id);
+    }
+    else {
+        fprintf(stderr, "Failed to execute statement: %s\n", sqlite3_errmsg(db));
+    }
+    sqlite3_step(res);
+    sqlite3_finalize(res);
+    std::cout << "Deleted succesfully\n";
+
+}
+
+void DeleteFromOwners(sqlite3* db) {
+
+    int id;
+    do {
+        std::cout << "Choose id to delete: ";
+        std::cin >> id;
+        if (id <= 0) {
+            std::cout << "\nPlease choose positive number\n";
+        }
+    } while (id <= 0);
+
+    const char* sql = "delete from owners where id = ?;";
+    sqlite3_stmt* res;
+    int rc = sqlite3_prepare_v2(db, sql, -1, &res, 0);
+
+    if (rc == SQLITE_OK) {
+        sqlite3_bind_int(res, 1, id);
+    }
+    else {
+        fprintf(stderr, "Failed to execute statement: %s\n", sqlite3_errmsg(db));
+    }
+    sqlite3_step(res);
+    sqlite3_finalize(res);
+    std::cout << "Deleted succesfully\n";
+
+}
+
+void DeleteFromRaces(sqlite3* db) {
+
+    int id;
+    do {
+        std::cout << "Choose id to delete: ";
+        std::cin >> id;
+        if (id <= 0) {
+            std::cout << "\nPlease choose positive number\n";
+        }
+    } while (id <= 0);
+
+    const char* sql = "delete from races where id = ?;";
+    sqlite3_stmt* res;
+    int rc = sqlite3_prepare_v2(db, sql, -1, &res, 0);
+
+    if (rc == SQLITE_OK) {
+        sqlite3_bind_int(res, 1, id);
+    }
+    else {
+        fprintf(stderr, "Failed to execute statement: %s\n", sqlite3_errmsg(db));
+    }
+    sqlite3_step(res);
+    sqlite3_finalize(res);
+    std::cout << "Deleted succesfully\n";
+
+}
+
+void DeleteFromUsers(sqlite3* db) {
+
+    int id;
+    do {
+        std::cout << "Choose id to delete: ";
+        std::cin >> id;
+        if (id <= 0) {
+            std::cout << "\nPlease choose positive number\n";
+        }
+    } while (id <= 0);
+
+    const char* sql = "delete from users where id = ?;";
+    sqlite3_stmt* res;
+    int rc = sqlite3_prepare_v2(db, sql, -1, &res, 0);
+
+    if (rc == SQLITE_OK) {
+        sqlite3_bind_int(res, 1, id);
+    }
+    else {
+        fprintf(stderr, "Failed to execute statement: %s\n", sqlite3_errmsg(db));
+    }
+    sqlite3_step(res);
+    sqlite3_finalize(res);
+    std::cout << "Deleted succesfully\n";
+
 }

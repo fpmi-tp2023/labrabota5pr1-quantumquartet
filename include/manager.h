@@ -1,4 +1,6 @@
-#pragma once
+#ifndef MANAGER_H
+#define MANAGER_H
+
 #include "menu.h"
 
 void ManagerInterface(sqlite3* db, std::string surname);
@@ -12,3 +14,5 @@ void PrizePoolDistribution(sqlite3* db, double prize_pool);
 void TableInteractions(sqlite3* db);
 
 static int callback(void* NotUsed, int argc, char** argv, char** azColName);
+
+#endif // MANAGER_H

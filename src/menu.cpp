@@ -1,4 +1,19 @@
-#include "menu.h"
+#include "../include/menu.h"
+
+bool NameCheck(std::string name) {
+    std::regex rgx("[a-z]{1,20}");
+    return std::regex_match(name, rgx);
+}
+
+bool DateCheck(std::string date) {
+    std::regex rgx(
+        "(((19[0-9]{2})|(20[0-1][0-9])|(202[0-3]))-((0[13578])|(1[02]))-(([0-2]["
+        "0-9])|(3[01])))"
+        "|(((19[0-9]{2})|(20[0-1][0-9])|(202[0-3]))-(0[469]|(11))-(([0-2][0-9])|("
+        "30)))"
+        "|(((19[0-9]{2})|(20[0-1][0-9])|(202[0-3]))-02-[0-2][0-8])");
+    return std::regex_match(date, rgx);
+}
 
 void SignIn(sqlite3* db) {
     std::string surname;
@@ -68,11 +83,16 @@ void SignUp(sqlite3* db) {
     std::string surname;
     std::string password;
     int type_choice;
-    std::cout << "Enter your surname: ";
-    std::cin >> surname;
-    if (surname == "exit") {
-        return;
-    }
+    do {
+        std::cout << "Enter surname: ";
+        std::cin >> surname;
+        if (!NameCheck(surname)) {
+            std::cout << "\nNot a surname!\n";
+        }
+        if (surname == "exit") {
+            return;
+        }
+    } while (!NameCheck(surname));
     std::cout << "\nEnter password: ";
     std::cin >> password;
     if (password == "exit") {
@@ -154,7 +174,8 @@ void MainMenu(sqlite3* db) {
             << "Enter the desired number to continue: \n"
             << "1.Sign in \n"
             << "2.Sign up \n"
-            << "3.Leave the hippodrome \n";
+            << "3.Info \n"
+            << "4.Leave the hippodrome \n";
         std::cin >> start_choice;
         switch (start_choice) {
         case 1:
@@ -166,6 +187,10 @@ void MainMenu(sqlite3* db) {
             break;
 
         case 3:
+            std::cout << "\nWhile trying to input data you can type 0 in numeric field or \"exit\" in other fields to abandon process\n\n";
+            break;
+
+        case 4:
             return;
 
         default:

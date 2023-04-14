@@ -1,14 +1,4 @@
-#include "jockey.h"
-
-bool DateCheck(std::string date) {
-    std::regex rgx(
-        "(((19[0-9]{2})|(20[0-1][0-9])|(202[0-3]))-((0[13578])|(1[02]))-(([0-2]["
-        "0-9])|(3[01])))"
-        "|(((19[0-9]{2})|(20[0-1][0-9])|(202[0-3]))-(0[469]|(11))-(([0-2][0-9])|("
-        "30)))"
-        "|(((19[0-9]{2})|(20[0-1][0-9])|(202[0-3]))-02-[0-2][0-8])");
-    return std::regex_match(date, rgx);
-}
+#include "../include/jockey.h"
 
 void JockeyInterface(sqlite3* db, std::string surname) {
     int manager_choice;
@@ -59,7 +49,7 @@ void JockeyAllRaces(sqlite3* db, std::string surname) {
 
     int step = sqlite3_step(res);
     if (step != SQLITE_ROW) {
-        std::cout << surname << "don't have any races\n";
+        std::cout << surname << " don't have any races\n";
     }
 
     while (step == SQLITE_ROW) {
@@ -126,7 +116,7 @@ void JockeyRacesInInterval(sqlite3* db, std::string surname) {
 
     int step = sqlite3_step(res);
     if (step != SQLITE_ROW) {
-        std::cout << surname << "don't have any races in this time interval\n";
+        std::cout << surname << " don't have any races in this time interval\n";
     }
     while (step == SQLITE_ROW) {
         for (int i = 0; i < sqlite3_column_count(res); ++i) {
