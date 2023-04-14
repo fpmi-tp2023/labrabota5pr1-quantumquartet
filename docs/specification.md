@@ -1,15 +1,26 @@
 # Диаграмма классов
-![Use-case diagram]()
-
-# Диаграмма деятельности
-![Use-case diagram]()
+![DiagramClass](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/main/Diagrams/DiagramClass.drawio.png?raw=true)
 
 # Диаграмма последовательности
-![Use-case diagram]()
+
+
+## Admin
+
+![DiagramSequenceAdmin](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/main/Diagrams/DiagramSequenceAdmin.drawio.png?raw=true)
+
+## Jockey
+
+![DiagramSequenceJockey](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/main/Diagrams/DiagramSequenceJockey.drawio.png?raw=true)
+
+## Owner
+
+![DiagramSequenceOwner](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/main/Diagrams/DiagramSequenceOwner.drawio.png?raw=true)
+
 
 # Диаграмма компонентов
-![Use-case diagram]()
+![DiagramComp](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/main/Diagrams/DiagramComp.drawio.png?raw=true)
 
-# Диаграмма развертывания
-![Use-case diagram]()
+# Диаграмма размещения
+
+![DiagramPlace](https://github.com/fpmi-tp2023/labrabota5pr1-quantumquartet/blob/main/Diagrams/DiagramPlace.drawio.png?raw=true)
 
