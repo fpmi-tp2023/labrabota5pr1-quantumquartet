@@ -19,7 +19,8 @@ Various types of database queries are illustrated, data is stored in various for
 
 1. Open the app on your computer.
 2. Choose an option from the menu.
-3. Test app features.
+3. To create necessary folders use: `make`
+4. To run application use: `make run`
 
 ![Screenshot of App Menu](https://github.com/xenia155/task4/blob/main/images/menu.png?raw=true)
 
@@ -34,6 +35,7 @@ Project authors:
      - Writing application code;
      - Testing the application code;
      - Writing SQL queries;
+     - Testing the project with Github Actions.
 - [**Krivlenya Anastasia**](https://github.com/a-krivlenya)
      - Implementation of a use case diagram to illustrate functional requirements;
      - Implementation of class diagrams that describe the structure of the application;
@@ -41,7 +43,6 @@ Project authors:
 - [**Chernyshova Ksenia**](https://github.com/xenia155) - Team Leader;
      - Project management in Kanban style;
      - Project documentation in Github Wiki/Pages;
-     - Testing the project with Github Actions.
      - Implementation of the sequence diagram.
     
 
